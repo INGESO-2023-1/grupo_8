@@ -1,37 +1,23 @@
 const express = require('express');
 const axios = require('axios');
-
 const router = express.Router();
 
-function device() {
-    
+async function GetDatos() {
+
+    const datos = await axios.get('https://localhost/3000')
+    .then((datos) => {
+        displayOutput(datos);
+    })
+    .catch((err) => console.log(err));
+
+    console.log(datos);
+
 }
-
-
-const device_arr = [];
-const len = oFullResponse.results.length;
-
-for (const i = 0; i < len; i++) {
-    device_arr.push({
-        key: oFullResponse.results[i].label,
-        sortable: true;
-        resizeable: true;
-    });
-}
-
-function mapa(hlr, msc = [], dispositivo = []){
-    this.hlr = hlr;
-    this.msc = msc;
-    this.dispositivo = dispositivo;
-}
-
-async function Simulacion() {
-    
-}
-Simulacion();
 
 router.get('/', (req, res) => {
+
     res.send();
+    GetDatos();
 })
 
 module.exports = router;
