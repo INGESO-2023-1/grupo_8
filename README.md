@@ -11,10 +11,11 @@
 ## Instrucciones de ejecución:
 
 ### Back-end
-$ cd back
-$ pipenv shell
-$ python manage.py runserver
+$ cd back\
+$ cd BackGuasac\
+$ pipenv shell\
+$ python manage.py runserver\
 
 ### Front-end
-$ cd front
-$ npm start
+$ cd front\
+$ npm start\
