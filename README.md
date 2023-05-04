@@ -14,8 +14,8 @@
 $ cd back\
 $ cd BackGuasac\
 $ pipenv shell\
-$ python manage.py runserver\
+$ python manage.py runserver
 
 ### Front-end
 $ cd front\
-$ npm start\
+$ npm start
