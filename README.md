@@ -11,7 +11,9 @@
 ## Instrucciones de ejecución:
 
 ### Back-end
-
+$ cd back
+$ pipenv shell
+$ python manage.py runserver
 
 ### Front-end
 $ cd front
