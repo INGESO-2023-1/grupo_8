@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'back.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': '', # NAME de la nueva DB, USER, PASSWORD, HOST, PORT
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': ''
     }
 }
 
