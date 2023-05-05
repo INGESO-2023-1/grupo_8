@@ -10,12 +10,12 @@
 
 ## Instrucciones de ejecución:
 
-### Back-end
-$ cd back\
-$ cd BackGuasac\
-$ pipenv shell\
-$ python manage.py runserver
-
-### Front-end
+### Buildear el Front
+$ cd Guasac2_app\
+$ cd Guasac2_app\
 $ cd front\
-$ npm start
+$ npm run build
+
+### Correr el servidor
+$ cd..\
+$ python manage.py runserver
