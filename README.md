@@ -51,6 +51,11 @@ py manage.py runserver
 El backend se ejecutará en [http://localhost:8000]()
 
 ### Ahora con el frontend:
+
+#### Instalar dependencias
+```
+npm install
+```
 #### Correr el servidor
 ```
 npm start
