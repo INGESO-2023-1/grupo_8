@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-
-function Signin() {
+function Register() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('/api/login', { username, password })
+    axios.post('/api/register', { username, password })
       .then((response) => {
         console.log(response);
       })
@@ -36,4 +35,4 @@ function Signin() {
   );
 }
 
-export default Signin;
+export default Register;
