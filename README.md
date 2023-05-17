@@ -45,6 +45,7 @@ El backend se ejecutará en [http://localhost:8000]()
 ### Ahora con el frontend:
 #### Correr el servidor
 ```
+cd FRONT
 npm start
 ```
-El frontend se ejecutará en [http://localhost/5173]()
+El frontend se ejecutará en [http://localhost/3000]()

@@ -28,7 +28,7 @@ const GetSim = () => {
 
     async function PostData ()  {
         try {
-            const resp = await axios.post('https://localhost:4000/Simulador', datos);
+            const resp = await axios.post('https://localhost:8000/Simulador', datos);
             console.log(resp.data);
         } catch (err) {
             console.log(err);
@@ -36,12 +36,13 @@ const GetSim = () => {
     }
 
     return (
-        <div>
+        <div className='center'>
             <form onSubmit={handleSubmit}>
                 <label>
                     Cantidad de MSC:
                     <input 
                         name='MSC'
+                        className='input-bar'
                         type='number'
                         onChange={handleMsc}
                     />
@@ -51,12 +52,13 @@ const GetSim = () => {
                     Cantidad de dispositivos:
                     <input 
                         name='Dispositivos'
+                        className='input-bar'
                         type='number'
                         onChange={handleDisp}
                     />
                 </label>
                 <br />
-                <input type='submit' value={"Submit"}/>
+                <input type='submit' className='submit'  value={"Submit"}/>
             </form>
         </div>
     );
