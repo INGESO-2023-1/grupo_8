@@ -3,6 +3,8 @@ import { Container, Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+import '../styles/styles.css';
+
 function Register() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -21,7 +23,7 @@ function Register() {
   };
 
   return (
-  <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: '70vh' }}>
+  <Container className="d-flex justify-content-center align-items-center container-style">
     <Link to="/" className="position-absolute top-0 start-0 m-3">Volver al inicio</Link>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="username">

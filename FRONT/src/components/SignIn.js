@@ -19,7 +19,7 @@ function Signin() {
   };
 
   return (
-    <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: '70vh' }}>
+    <Container className="d-flex justify-content-center align-items-center container-style">
       <Link to="/" className="position-absolute top-0 start-0 m-3">Volver al inicio</Link>
       <Form onSubmit={handleSubmit} style={{ maxWidth: '400px' }}>
         <Form.Group controlId="username">
