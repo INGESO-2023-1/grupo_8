@@ -1,0 +1,19 @@
+.custom-primary {
+  background-color: #A0AEEA; /* Color de fondo personalizado para la columna de chats */
+  }
+  
+.custom-secondary {
+  background-color: #C2C4F6; /* Color de fondo personalizado para la columna de chat seleccionado */
+}
+
+.message {
+  border: 1px solid #000000;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px; /* Ajusta el valor según tus preferencias */
+  }
+  
+/* .message-content { */
+  /* Estilos adicionales para el contenido del mensaje si es necesario */
+/* } */
+  

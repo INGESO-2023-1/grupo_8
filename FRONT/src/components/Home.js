@@ -1,13 +1,13 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import './Home.css'; // Archivo CSS personalizado para los colores
+import '../styles/Home.css'; // Archivo CSS personalizado para los colores
 
 function Home() {
   return (
     <Container fluid style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Row style={{ flex: 1 }}>
-        <Col md={4} className="custom-primary" style={{ height: '100%' }}>
+        <Col md={4} className="custom-primary d-flex flex-column">
           {/* Lista de chats */}
           <div className="p-3">
             <h3>Chats</h3>
@@ -19,18 +19,26 @@ function Home() {
             </ul>
           </div>
         </Col>
-        <Col md={8} className="custom-secondary" style={{ height: '100%' }}>
+        <Col md={8} className="custom-secondary d-flex flex-column">
           {/* Chat seleccionado */}
           <div className="p-3">
             <h3>Chat seleccionado / Nombre del contacto</h3>
             <div className="chat-messages">
               {/* Renderiza los mensajes del chat aquí */}
-              <div className="message">Mensaje prueba 1</div>
-              <div className="message">Mensaje prueba 2</div>
-              <div className="message">Mensaje prueba 3</div>
+              <div className="message">
+                <div className="message-content">Mensaje prueba 1</div>
+              </div>
+              <div className="message">
+                <div className="message-content">Mensaje prueba 2</div>
+              </div>
+              <div className="message">
+                <div className="message-content">Mensaje prueba 3</div>
+              </div>
             </div>
-            {/* Casilla de texto para escribir mensajes */}
-            <Form className="mt-3">
+          </div>
+          {/* Casilla de texto para escribir mensajes */}
+          <div className="mt-auto">
+            <Form className="p-3">
               <Row>
                 <Col xs={10}>
                   <Form.Control type="text" placeholder="Escribe tu mensaje" />
