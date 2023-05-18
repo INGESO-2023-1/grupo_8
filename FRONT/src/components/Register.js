@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
+import { Container, Form, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 function Register() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [email, setEmail] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('/api/register', { username, password })
+    axios.post('/api/register', { username, password, phoneNumber, email })
       .then((response) => {
         console.log(response);
       })
@@ -17,21 +21,46 @@ function Register() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Usuario:
-          <input type="text" name="usuario" value={username} onChange={(event) => setUsername(event.target.value)} />
-        </label>
-        <br />
-        <label>
-          Contraseña:
-          <input type="password" name="contraseña" value={password} onChange={(event) => setPassword(event.target.value)} />
-        </label>
-        <br />
-        <input type="submit" value="Enviar" />
-      </form>
-    </div>
+  <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: '70vh' }}>
+    <Link to="/" className="position-absolute top-0 start-0 m-3">Volver al inicio</Link>
+      <Form onSubmit={handleSubmit}>
+        <Form.Group controlId="username">
+          <Form.Label>Usuario:</Form.Label>
+          <Form.Control
+            type="text"
+            value={username}
+            onChange={(event) => setUsername(event.target.value)}
+          />
+        </Form.Group>
+        <Form.Group controlId="password">
+          <Form.Label>Contraseña:</Form.Label>
+          <Form.Control
+            type="password"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+          />
+        </Form.Group>
+        <Form.Group controlId="phoneNumber">
+          <Form.Label>Número de teléfono:</Form.Label>
+          <Form.Control
+            type="text"
+            value={phoneNumber}
+            onChange={(event) => setPhoneNumber(event.target.value)}
+          />
+        </Form.Group>
+        <Form.Group controlId="email">
+          <Form.Label>Correo electrónico:</Form.Label>
+          <Form.Control
+            type="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+          />
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Enviar
+        </Button>
+      </Form>
+    </Container>
   );
 }
 
