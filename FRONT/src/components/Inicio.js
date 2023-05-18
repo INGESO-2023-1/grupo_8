@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 function Inicio() {
     return (
-        <div>
+        <div style={{ backgroundColor: '#EEF2ED', minHeight: '100vh' }}>
         {/* Encabezado */}
         <header className="py-5 text-center">
           <h1>Guasac 2</h1>

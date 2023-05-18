@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import './Home.css'; // Archivo CSS personalizado para los colores
+import '../styles/Home.css'; // Archivo CSS personalizado para los colores
 
 function Home() {
   return (
