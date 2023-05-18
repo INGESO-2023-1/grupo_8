@@ -55,6 +55,8 @@ El backend se ejecutará en [http://localhost:8000]()
 #### Instalar dependencias
 ```
 npm install
+npm install react-router-dom
+npm install react-bootstrap
 ```
 #### Correr el servidor
 ```
