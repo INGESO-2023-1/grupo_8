@@ -44,11 +44,22 @@ pip install -r requirements.txt
 py manage.py migrate
 ```
 
+### Crear servidor Redis
+Se utiliza para generar capas de Channels, de modo que estas puedan comunicarse entre si y además mostrar el chat en tiempo real
+```
+docker run -p 6379:6379 -d redis:5
+```
+
 ##### Correr el servidor
 ```
 py manage.py runserver
 ```
 El backend se ejecutará en [http://localhost:8000]()
+
+### Crear una sala de chat
+Ingresando a [http://localhost:8000/chat]() podremos ver una ventana a través de la cual podemos crear un ChatRoom indicando un \<nombre>.
+Dicho ChatRoom será creado en [http://localhost:8000/chat/<nombre>](). Al abrirlo en dos pestañas podemos tener una conversación.
+
 
 ### Ahora con el frontend:
 
