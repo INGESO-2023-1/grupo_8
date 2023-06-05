@@ -99,8 +99,8 @@ function Inicio() {
         <footer className="py-4 bg-dark text-white">
           <Container>
             <p>Contáctanos para obtener más información:</p>
-            <p>Teléfono: +56 9 5774 7175 </p>
-            <p>Email: ivan.zuniga@usm.cl</p>
+            <p>Teléfono: +11 2 3344 5566 </p>
+            <p>Email: name.lastname@mail.com</p>
             <p>INF-225 2023-1</p>
           </Container>
         </footer>

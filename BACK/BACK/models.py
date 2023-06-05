@@ -5,7 +5,7 @@ class Hlr(models.Model):
     hlr_id = models.AutoField(primary_key=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'hlr'
 
 
@@ -14,7 +14,7 @@ class HlrMsc(models.Model):
     msc = models.ForeignKey('Msc', models.DO_NOTHING)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'hlr_msc'
 
 
@@ -23,7 +23,7 @@ class HlrUsers(models.Model):
     user = models.ForeignKey('Users', models.DO_NOTHING)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'hlr_users'
 
 
@@ -34,7 +34,7 @@ class Messages(models.Model):
     sender = models.ForeignKey('Users', models.DO_NOTHING, db_column='sender', related_name='messages_sender_set')
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'messages'
 
 
@@ -43,7 +43,7 @@ class Msc(models.Model):
     hlr = models.ForeignKey(Hlr, models.DO_NOTHING)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'msc'
 
 
@@ -52,15 +52,15 @@ class MscUsers(models.Model):
     user = models.ForeignKey('Users', models.DO_NOTHING)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'msc_users'
 
 
 class Users(models.Model):
     user_id = models.AutoField(primary_key=True)
     user_name = models.CharField(max_length=255)
-    msc_id = models.IntegerField()
+    msc_id = models.ForeignKey(Msc, models.DO_NOTHING)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'users'

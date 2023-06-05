@@ -13,7 +13,7 @@ function Register() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('/api/register', { username, password, phoneNumber, email })
+    axios.post('localhost:8000/api', { username, password, phoneNumber, email })
       .then((response) => {
         console.log(response);
       })

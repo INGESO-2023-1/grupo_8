@@ -9,7 +9,7 @@ function Signin() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('/api/login', { username, password })
+    axios.post('localhost:8000/api', { username, password })
       .then((response) => {
         console.log(response);
       })
