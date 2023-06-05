@@ -59,6 +59,7 @@ class MscUsers(models.Model):
 class Users(models.Model):
     user_id = models.AutoField(primary_key=True)
     user_name = models.CharField(max_length=255)
+    user_pass = models.CharField(max_length=255)
     msc_id = models.ForeignKey(Msc, models.DO_NOTHING)
 
     class Meta:
