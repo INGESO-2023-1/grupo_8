@@ -20,7 +20,7 @@ class HlrMsc(models.Model):
 
 class HlrUsers(models.Model):
     hlr = models.ForeignKey(Hlr, models.DO_NOTHING)
-    user = models.ForeignKey('Users', models.DO_NOTHING)
+    #user = models.ForeignKey('Users', models.DO_NOTHING)
 
     class Meta:
         managed = True
@@ -30,8 +30,8 @@ class HlrUsers(models.Model):
 class Messages(models.Model):
     message = models.TextField()
     date_time = models.DateTimeField(blank=True, null=True)
-    receiver = models.ForeignKey('Users', models.DO_NOTHING, db_column='receiver')
-    sender = models.ForeignKey('Users', models.DO_NOTHING, db_column='sender', related_name='messages_sender_set')
+    #receiver = models.ForeignKey('Users', models.DO_NOTHING, db_column='receiver')
+    #sender = models.ForeignKey('Users', models.DO_NOTHING, db_column='sender', related_name='messages_sender_set')
 
     class Meta:
         managed = True
@@ -49,13 +49,13 @@ class Msc(models.Model):
 
 class MscUsers(models.Model):
     msc = models.ForeignKey(Msc, models.DO_NOTHING)
-    user = models.ForeignKey('Users', models.DO_NOTHING)
+    #user = models.ForeignKey('Users', models.DO_NOTHING)
 
     class Meta:
         managed = True
         db_table = 'msc_users'
 
-
+"""
 class Users(models.Model):
     user_id = models.AutoField(primary_key=True)
     user_name = models.CharField(max_length=255)
@@ -65,3 +65,4 @@ class Users(models.Model):
     class Meta:
         managed = True
         db_table = 'users'
+"""
