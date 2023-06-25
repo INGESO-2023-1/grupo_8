@@ -6,14 +6,15 @@ import axios from 'axios';
 import '../styles/styles.css';
 
 function Register() {
-  const [username, setUsername] = useState('');
+  const [user_name, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [email, setEmail] = useState('');
+  const user_pass = password;
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('localhost:8000/api', { username, password, phoneNumber, email })
+    axios.post('//localhost:8000/api/register', { user_name, password, user_pass, phoneNumber, email })
       .then((response) => {
         console.log(response);
       })
@@ -30,7 +31,7 @@ function Register() {
           <Form.Label>Usuario:</Form.Label>
           <Form.Control
             type="text"
-            value={username}
+            value={user_name}
             onChange={(event) => setUsername(event.target.value)}
           />
         </Form.Group>

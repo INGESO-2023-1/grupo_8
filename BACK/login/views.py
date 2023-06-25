@@ -6,10 +6,11 @@ from rest_framework.response import Response
 from .serializers import UserRegisterSerializer, UserLoginSerializer, UserSerializer
 from rest_framework import permissions, status
 from .validations import custom_validation, validate_user_name, validate_user_pass
+from django.http import JsonResponse
+import json
 
 # Create your views here.
-#def index(request):
-    #return render(request, "login/index.html")
+
 
 class UserRegister(APIView):
     permission_classes = (permissions.AllowAny,)

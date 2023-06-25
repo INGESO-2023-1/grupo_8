@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom';
 import { Container, Form, Button } from 'react-bootstrap';
 
 function Signin() {
-  const [username, setUsername] = useState('');
+  const [user_name, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const user_pass = password;
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('localhost:8000/api', { username, password })
+    axios.post('//localhost:8000/api/login', JSON.stringify({user_name, password, user_pass }), {headers:{"Content-Type": "application/json"}})
       .then((response) => {
         console.log(response);
       })
@@ -26,7 +27,7 @@ function Signin() {
           <Form.Label>Usuario:</Form.Label>
           <Form.Control
             type="text"
-            value={username}
+            value={user_name}
             onChange={(event) => setUsername(event.target.value)}
           />
         </Form.Group>
