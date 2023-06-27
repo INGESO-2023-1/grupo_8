@@ -1,50 +1,65 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+// Import the react JS packages 
+import axios from "axios";
+import {useState} from "react";
+import  axiosInstance  from "../axiosApi";
 import { Link } from 'react-router-dom';
-import { Container, Form, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
+import { useNavigate } from "react-router-dom";
+// Define the Login function.
 
-function Signin() {
-  const [user_name, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const user_pass = password;
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    axios.post('//localhost:8000/api/login', JSON.stringify({user_name, password, user_pass }), {headers:{"Content-Type": "application/json"}})
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
-  return (
-    <Container className="d-flex justify-content-center align-items-center container-style">
-      <Link to="/" className="position-absolute top-0 start-0 m-3">Volver al inicio</Link>
-      <Form onSubmit={handleSubmit} style={{ maxWidth: '400px' }}>
-        <Form.Group controlId="username">
-          <Form.Label>Usuario:</Form.Label>
-          <Form.Control
-            type="text"
-            value={user_name}
-            onChange={(event) => setUsername(event.target.value)}
-          />
-        </Form.Group>
-        <Form.Group controlId="password">
-          <Form.Label>Contraseña:</Form.Label>
-          <Form.Control
-            type="password"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-          />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Enviar
-        </Button>
-      </Form>
-    </Container>
-  );
+const Signin = () => {
+     const navigate = useNavigate();
+     const [username, setUsername] = useState('');
+     const [password, setPassword] = useState('');
+     // Create the submit method.
+     const submit = async e => {
+          e.preventDefault();
+          try {
+            const response = await axiosInstance.post('/token/', {
+              username: username,
+              password: password
+            });
+            axiosInstance.defaults.headers['Authorization'] = 'JWT ' + response.data.access;
+            localStorage.setItem('access_token', response.data.access);
+            localStorage.setItem('refresh_token', response.data.refresh);
+            navigate('/hello');
+          }
+          catch (error) {
+            throw error;
+          }
+    }
+    return(
+      <div className="Auth-form-container">
+        <form className="Auth-form" onSubmit={submit}>
+          <div className="Auth-form-content">
+            <h3 className="Auth-form-title">Sign In</h3>
+            <div className="form-group mt-3">
+              <label>Username</label>
+              <input className="form-control mt-1" 
+                placeholder="Enter Username" 
+                name='username'  
+                type='text' value={username}
+                required 
+                onChange={e => setUsername(e.target.value)}/>
+            </div>
+            <div className="form-group mt-3">
+              <label>Password</label>
+              <input name='password' 
+                type="password"     
+                className="form-control mt-1"
+                placeholder="Enter password"
+                value={password}
+                required
+                onChange={e => setPassword(e.target.value)}/>
+            </div>
+            <div className="d-grid gap-2 mt-3">
+              <button type="submit" 
+                 className="btn btn-primary">Submit</button>
+            </div>
+          </div>
+       </form>
+     </div>
+     )
 }
 
 export default Signin;

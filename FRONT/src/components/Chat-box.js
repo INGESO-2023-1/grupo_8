@@ -14,7 +14,7 @@ const ChatComponent = () => {
   };
 
   useEffect(() => {
-    socketRef.current = new WebSocket('ws://localhost:8000/ws/chat/');
+    socketRef.current = new WebSocket('ws://localhost:8000/chat/');
 
     socketRef.current.onopen = () => {
       console.log('WebSocket connection established.');

@@ -17,8 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+from api import views
+
 urlpatterns = [
     path("chat/", include("chat.urls")),
-    path('api/', include('login.urls')),
     path('admin/', admin.site.urls),
+    path('api/', include("api.urls")),
+    path('logout/', views.LogoutView.as_view(), name='logout')
 ]
