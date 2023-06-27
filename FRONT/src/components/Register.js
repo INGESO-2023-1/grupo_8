@@ -2,9 +2,11 @@
 import axios from "axios";
 import {useState} from "react";
 import  axiosInstance  from "../axiosApi";
+import { useNavigate } from "react-router-dom";
 // Define the Login function.
 
 const Signin = () => {
+     const navigate = useNavigate();
      const [username, setUsername] = useState('');
      const [password, setPassword] = useState('');
      const [email, setEmail] = useState('');
@@ -17,7 +19,8 @@ const Signin = () => {
               email: email,
               password: password
             });
-            return response
+            console.log(response);
+            navigate('/login');
           }catch(error) {
             console.log(error.stack);
 

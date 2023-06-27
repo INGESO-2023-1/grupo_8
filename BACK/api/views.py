@@ -20,7 +20,7 @@ class ObtainTokenPairWithColorView(TokenObtainPairView):
 class CustomUserCreate(APIView):
     permission_classes = (permissions.AllowAny, )
 
-    def post(sled, request, format='json'):
+    def post(self, request, format='json'):
         serializer = CustomUserSerializer(data=request.data)
         if serializer.is_valid():
             user = serializer.save()
