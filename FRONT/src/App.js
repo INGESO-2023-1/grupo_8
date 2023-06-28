@@ -15,7 +15,6 @@ import Logout from './components/Logout';
 function App() {
   return (
     <Router>
-      <Navigation />
       <Routes>
         <Route path='/logout' element={<Logout />} />
         <Route path='hello' element={<Hello />} />

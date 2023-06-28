@@ -31,38 +31,43 @@ const Signin = () => {
       <div className="Auth-form-container">
         <form className="Auth-form" onSubmit={submit}>
           <div className="Auth-form-content">
-            <h3 className="Auth-form-title">Register</h3>
+            <h3 className="Auth-form-title">Crear cuenta</h3>
             <div className="form-group mt-3">
-              <label>Username</label>
+              <label>Nombre de usuario</label>
               <input className="form-control mt-1" 
-                placeholder="Enter Username" 
+                placeholder="Ingresa nombre de usuario" 
                 name='username'  
                 type='text' value={username}
                 required 
                 onChange={e => setUsername(e.target.value)}/>
             </div>
             <div className="form-group mt-3">
-              <label>Email</label>
+              <label>Correo electrónico</label>
               <input className="form-control mt-1" 
-                placeholder="Enter email" 
+                placeholder="Ingresa correo electrónico" 
                 name='username'  
                 type='text' value={email}
                 required 
                 onChange={e => setEmail(e.target.value)}/>
             </div>
             <div className="form-group mt-3">
-              <label>Password</label>
+              <label>Contraseña</label>
               <input name='password' 
                 type="password"     
                 className="form-control mt-1"
-                placeholder="Enter password"
+                placeholder="Ingresa contraseña"
                 value={password}
                 required
                 onChange={e => setPassword(e.target.value)}/>
             </div>
+            <div>
+              <a href="/login">
+                ¿Ya tienes una cuenta? Ingresa aquí
+              </a>
+            </div>
             <div className="d-grid gap-2 mt-3">
               <button type="submit" 
-                 className="btn btn-primary">Submit</button>
+                 className="btn btn-primary">Registrar</button>
             </div>
           </div>
        </form>

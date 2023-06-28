@@ -12,8 +12,8 @@ function Navigation() {
     }, [isAuth]);
     
     return (
-        <div style={{ backgroundColor: '#002e25'}}>
-            <Navbar bg="dark" variant='dark' >
+        <div>
+            <Navbar bg="dark" variant='dark'>
                 <Navbar.Brand href='/'>Guasac 2</Navbar.Brand>
                 <Nav className='me-auto'>
                     {isAuth ? <Nav.Link href='/'>Home</Nav.Link> : null}

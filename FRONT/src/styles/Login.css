@@ -1,3 +1,8 @@
+body {
+  background-image: url('../images/fondo.png');
+  background-size: cover; /* Ajusta el tamaño de la imagen */
+}
+
 .Auth-form-container {
     display: flex;
     justify-content: center;
@@ -8,7 +13,7 @@
   .Auth-form {
     max-width: 400px;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 3px solid #77c6a3;
     border-radius: 4px;
     background-color: #fff;
   }
@@ -34,13 +39,13 @@
     padding: 10px;
     font-size: 16px;
     border-radius: 4px;
-    background-color: #007bff;
+    background-color: #77c6a3;
     color: #fff;
     border: none;
     cursor: pointer;
   }
   
   .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: #356b53;
   }
   
