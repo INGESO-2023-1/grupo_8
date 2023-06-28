@@ -69,6 +69,11 @@ const Signin = () => {
               <button type="submit" 
                  className="btn btn-primary">Registrar</button>
             </div>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <a href="/">
+                Volver al inicio
+              </a>
+            </div>
           </div>
        </form>
      </div>

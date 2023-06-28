@@ -71,6 +71,11 @@ const Signin = () => {
               Ingresar
             </button>
           </div>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <a href="/">
+              Volver al inicio
+            </a>
+          </div>
         </div>
       </form>
     </div>

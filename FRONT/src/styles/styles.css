@@ -17,15 +17,23 @@ body {
   
   .testimonial-image-container {
     display: flex;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
-    margin-left: 250px;
+    padding: 10px;
+    clip-path: circle(30% at center);
   }
   
-  .testimonial-image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .testimonial-image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
   }
+  
+  .testimonial-image {
+    max-width: 50%;
+    max-height: 50%;
+    object-fit: contain;
+  }
+  

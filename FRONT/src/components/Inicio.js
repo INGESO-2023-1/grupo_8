@@ -24,21 +24,21 @@ function Inicio() {
         <Container style={{ backgroundColor: '#A8D8B9' }}>
           <Row>
             <Col md={4}>
-              <div className="feature text-center" style={{ backgroundColor: '#77c6a3', borderRadius: '15px', padding: '20px', height: '120px' }}>
+              <div className="feature text-center" style={{ backgroundColor: '#77c6a3', borderRadius: '15px', padding: '20px', height: '140px', border: '3px solid #fff'}}>
                 <i className="fa fa-clock-o"></i>
                 <h3 style={{ color: '#FFFFFF' }}>Rapidez</h3>
                 <p style={{ color: '#FFFFFF' }}>Entrega instantánea de tus mensajes a través de nuestra plataforma.</p>
               </div>
             </Col>
             <Col md={4}>
-              <div className="feature text-center" style={{ backgroundColor: '#77c6a3', borderRadius: '15px', padding: '20px', height: '120px' }}>
+              <div className="feature text-center" style={{ backgroundColor: '#77c6a3', borderRadius: '15px', padding: '20px', height: '140px', border: '3px solid #fff'}}>
                 <i className="fa fa-shield"></i>
                 <h3 style={{ color: '#FFFFFF' }}>Seguridad</h3>
                 <p style={{ color: '#FFFFFF' }}>Protegemos tus mensajes y datos personales.</p>
               </div>
             </Col>
             <Col md={4}>
-              <div className="feature text-center" style={{ backgroundColor: '#77c6a3', borderRadius: '15px', padding: '20px', height: '120px' }}>
+              <div className="feature text-center" style={{ backgroundColor: '#77c6a3', borderRadius: '15px', padding: '20px', height: '140px', border: '3px solid #fff'}}>
                 <i className="fa fa-check-circle"></i>
                 <h3 style={{ color: '#FFFFFF' }}>Simplicidad</h3>
                 <p style={{ color: '#FFFFFF' }}>Nuestro servicio es fácil de usar y te permite enviar mensajes en pocos pasos.</p>
@@ -49,13 +49,16 @@ function Inicio() {
       </section>
 
       {/* Testimonios de clientes */}
+      {/* Testimonios de clientes */}
       <section className="py-5">
         <Container>
           <Row>
             <Col md={6}>
               <div className="testimonial text-center">
                 <div className="testimonial-image-container">
-                  <img src={testimonial1} alt="Cliente 1" className="mb-3" />
+                  <div className="testimonial-image-wrapper">
+                    <img src={testimonial1} alt="Cliente 1" className="testimonial-image" />
+                  </div>
                 </div>
                 <p className="mb-3">"¡Increíble servicio de mensajería telefónica! Rápido, confiable y fácil de usar. Lo recomiendo totalmente."</p>
               </div>
@@ -63,7 +66,9 @@ function Inicio() {
             <Col md={6}>
               <div className="testimonial text-center">
                 <div className="testimonial-image-container">
-                  <img src={testimonial2} alt="Cliente 2" className="mb-3" />
+                  <div className="testimonial-image-wrapper">
+                    <img src={testimonial2} alt="Cliente 2" className="testimonial-image" />
+                  </div>
                 </div>
                 <p className="mb-3">"Estoy muy satisfecho con el servicio de mensajería telefónica. Me ha ahorrado mucho tiempo y me facilita la comunicación con mis contactos."</p>
               </div>
@@ -71,6 +76,7 @@ function Inicio() {
           </Row>
         </Container>
       </section>
+
 
       <section className="py-5">
         <Container>
