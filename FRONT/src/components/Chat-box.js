@@ -1,43 +1,35 @@
 // ChatComponent.js
 
 import React, { useEffect, useRef, useState } from 'react';
+import axiosInstance from '../axiosApi';
 
-const ChatComponent = () => {
-  const socketRef = useRef(null);
-  const [message, setMessage] = useState('');
-
-  const sendMessage = () => {
-    if (message.trim() !== '') {
-      socketRef.current.send(message);
-      setMessage('');
-    }
-  };
+const ChatComponent = ({ roomName }) => {
+  const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    socketRef.current = new WebSocket('ws://localhost:8000/chat/');
-
-    socketRef.current.onopen = () => {
-      console.log('WebSocket connection established.');
+    const fetchMessages = async () => {
+      try {
+        const response = await axiosInstance.get(`http://localhost:8000/chat/${roomName}/`);
+        setMessages(response.data);
+      } catch (error) {
+        console.error('Error fetching chat messages:', error);
+      }
     };
 
-    socketRef.current.onmessage = (event) => {
-      const message = event.data;
-      console.log('Received message:', message);
-    };
-
-    return () => {
-      socketRef.current.close();
-    };
-  }, []);
+    fetchMessages();
+  }, [roomName]);
 
   return (
     <div>
-      <input
-        type="text"
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-      />
-      <button onClick={sendMessage}>Send</button>
+      <h1>Chat Conversation: {roomName}</h1>
+      <div className="message-container">
+        {messages.map((message) => (
+          <div key={message.id}>
+            <strong>{message.author}: </strong>
+            {message.content}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axiosInstance from "../axiosApi";
+import Navigation from "./Navigation_bar";
  
 
 const Hello = () => {
@@ -21,8 +22,13 @@ const Hello = () => {
         ObtainMessage();
     }, []);
 
+    const handleChatNameSubmit = (chatName) => {
+        console.log('Submitted chat name: ', chatName)
+    }
+
     return(
         <div>
+            <Navigation />
             <p>
                 {message}
             </p>
