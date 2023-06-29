@@ -8,6 +8,9 @@ const Hello = () => {
     const[message, setMessage] = useState("");
 
     useEffect(() => {
+        if(localStorage.getItem('access_token') === null){                   
+            window.location.href = '/login'
+        }
         async function ObtainMessage() {
             try{
                 const response = await axiosInstance.get('/hello/');
@@ -75,13 +78,13 @@ return (
             <Button
             variant="secondary"
             style={{
-              position: 'absolute',
-              top: '10px',
-              right: '10px'
+                position: 'absolute',
+                top: '10px',
+                right: '10px'
             }}
-          >
-            Home
-          </Button>
+            >
+            <a href="/">Home</a>
+            </Button>
         </Col>
         </Row>
     </Container>
