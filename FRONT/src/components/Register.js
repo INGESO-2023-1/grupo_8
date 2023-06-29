@@ -68,11 +68,14 @@ const Signin = () => {
             <div className="d-grid gap-2 mt-3">
               <button type="submit" 
                  className="btn btn-primary">Registrar</button>
+<<<<<<< Updated upstream
             </div>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
               <a href="/">
                 Volver al inicio
               </a>
+=======
+>>>>>>> Stashed changes
             </div>
           </div>
        </form>
